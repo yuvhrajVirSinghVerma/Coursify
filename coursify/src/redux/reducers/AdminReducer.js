@@ -1,0 +1,110 @@
+import { createReducer } from "@reduxjs/toolkit";
+
+
+export const adminReducer =createReducer({},{
+    createCourseRequest:state=>{
+        state.loading=true;
+    },
+    createCourseSuccess:(state,action)=>{
+        state.loading=false;
+        state.message=action.payload
+    },
+    createCourseFail:(state,action)=>{
+        state.loading=false;
+        state.error=action.payload
+    },
+    deleteCourseRequest:state=>{
+        state.loading=true;
+    },
+    deleteCourseSuccess:(state,action)=>{
+        state.loading=false;
+        state.message=action.payload
+    },
+    deleteCourseFail:(state,action)=>{
+        state.loading=false;
+        state.error=action.payload
+    },
+    addLecturesRequest:state=>{
+        state.loading=true;
+    },
+    addLecturesSuccess:(state,action)=>{
+        state.loading=false;
+        state.message=action.payload
+    },
+    addLecturesFail:(state,action)=>{
+        state.loading=false;
+        state.error=action.payload
+    },
+    deleteLecturesRequest:state=>{
+        state.loading=true;
+    },
+    deleteLecturesSuccess:(state,action)=>{
+        state.loading=false;
+        state.message=action.payload
+    },
+    deleteLecturesFail:(state,action)=>{
+        state.loading=false;
+        state.error=action.payload
+    },
+    getAllUsersRequest:state=>{
+        state.loading=true;
+    },
+    getAllUsersRequestSuccess:(state,action)=>{
+        state.loading=false;
+        state.users=action.payload
+    },
+    getAllUsersRequestFail:(state,action)=>{
+        state.loading=false;
+        state.error=action.payload
+    },
+updateUserRequest:state=>{
+        state.loading=true;
+    },
+updateUserRequestSuccess:(state,action)=>{
+        state.loading=false;
+        state.message=action.payload
+    },
+updateUserRequestFail:(state,action)=>{
+        state.loading=false;
+        state.error=action.payload
+    },
+deleteUserRequest:state=>{
+        state.loading=true;
+    },
+deleteUserRequestSuccess:(state,action)=>{
+        state.loading=false;
+        state.message=action.payload
+    },
+deleteUserRequestFail:(state,action)=>{
+        state.loading=false;
+        state.error=action.payload
+    },
+getAdminStateRequest:state=>{
+        state.loading=true;
+    },
+getAdminStateRequestFail:(state,action)=>{
+        state.loading=false;
+        state.message=action.payload
+    },
+    getAdminStateRequestSuccess:(state,action)=>{
+    console.log("getAdminStateRequestSuccess",action)
+        state.loading=false;
+        state.stats=action.payload.stats
+        state.viewsCount=action.payload.viewsCount
+        state.subscriptionCount=action.payload.subscriptionCount
+        state.usersCount=action.payload.usersCount
+        state.subscriptionPercentage=action.payload.subscriptionPercentage
+        state.viewsPercentage=action.payload.viewsPercentage
+        state.usersPercentage=action.payload.usersPercentage
+        state.subscriptionProfit=action.payload.subscriptionProfit
+        state.viewsProfit=action.payload.viewsProfit
+        state.userProfit=action.payload.userProfit
+    },
+
+    clearError:(state)=>{
+        state.error=null
+    },
+    clearMessage:(state)=>{
+        state.message=null
+    },
+})
